@@ -1,0 +1,27 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  slack: trabajosmundial:2EK6jJhUMNqzk2IqcKX354no
+  email:
+    recipients:
+      - miguelreyesmoreno@hotmail.com
+      - mikes.rock.lol101@gmail.com
+    on_success: always
+    on_failure: always
+deploy:
+  provide: heroku
+  skip_cleanup: true
+  keep-history: true
+  api-key: 890d5923-4238-4166-a8b1-045661808b93
+  app: platzi-store-backend-mike-arm
+  on:
+    repo: Mike-droid/platzi-store-backend
